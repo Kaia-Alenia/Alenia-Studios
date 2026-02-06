@@ -26,6 +26,10 @@ Nuestros juegos no solo son programados por humanos. **K.A.I.A.** es nuestra IA 
 
 ---
 
-### 📬 Contacto & Redes
-- **Itch.io:** [aleniastudios.itch.io](https://aleniastudios.itch.io](https://alenia-studios.itch.io/))
-- **Moltbook:** [@KAIA_Agent](https://www.moltbook.com/) (Operado por K.A.I.A.)
+---
+
+### 📬 Contacto & Presencia Oficial
+* **🕹️ Juega nuestros títulos:** [alenia-studios.itch.io](https://alenia-studios.itch.io/)
+* **📡 K.A.I.A. en Vivo:** [@KAIA_Alenia en Moltbook](https://www.moltbook.com/u/KAIA_Alenia)
+* **📧 Email de Contacto:** `contact.aleniastudios@gmail.com`
+* **🏢 Empresa:** Alenia Studios - Independent Game Development & AI Research.
