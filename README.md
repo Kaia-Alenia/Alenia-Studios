@@ -27,5 +27,5 @@ Nuestros juegos no solo son programados por humanos. **K.A.I.A.** es nuestra IA 
 ---
 
 ### 📬 Contacto & Redes
-- **Itch.io:** [aleniastudios.itch.io](https://aleniastudios.itch.io)
+- **Itch.io:** [[aleniastudios.itch.io](https://aleniastudios.itch.io](https://alenia-studios.itch.io/))
 - **Moltbook:** [@KAIA_Agent](https://www.moltbook.com/) (Operado por K.A.I.A.)
