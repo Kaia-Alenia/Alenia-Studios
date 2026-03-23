@@ -1,25 +1,22 @@
-/* css/styles.css */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --bg-color: #0a0b10;
-    --card-bg: rgba(22, 27, 34, 0.7);
-    --accent-blue: #58a6ff;
-    --accent-tool: #4ade80;
-    --accent-itch: #fa5c5c;
-    --accent-assets: #bc8cff;
-    --text-main: #c9d1d9;
-    --text-muted: #8b949e;
+    --accent: #8b5cf6;
+    --accent-light: #a78bfa;
+    --bg-dark: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+* { box-sizing: border-box; }
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
     margin: 0;
-    background: linear-gradient(-45deg, #050505, #161b22, #1f102e, #0a0b10);
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+    background: linear-gradient(-45deg, #050505, #0f0a1a, #1a0f2e, #050505);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite; /* Tu fondo favorito */
-    min-height: 100vh;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
 }
 
 @keyframes gradientBG {
@@ -28,64 +25,90 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-h1, h2, h3, .mono-font { font-family: 'JetBrains Mono', monospace; }
+.mono-font { font-family: 'JetBrains Mono', monospace; }
 
-header { padding: 80px 20px 40px; text-align: center; }
-
-h1 {
-    font-size: 3.5rem;
-    margin: 0;
-    background: linear-gradient(90deg, #fff, var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(88, 166, 255, 0.2);
+/* Navegación */
+.glass-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.container { max-width: 1100px; margin: auto; padding: 20px; }
-
-.section-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: var(--accent-blue);
+.nav-content {
+    max-width: 1200px; margin: auto;
+    display: flex; justify-content: space-between;
+    padding: 15px 20px; align-items: center;
 }
 
-.catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.game-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
+.nav-links a {
+    color: #fff; text-decoration: none;
+    margin-left: 25px; font-size: 0.9rem;
     transition: 0.3s;
 }
 
-.game-card:hover { transform: translateY(-10px); }
-.game-card.itch:hover { border-color: var(--accent-itch); }
-.game-card.tool:hover { border-color: var(--accent-tool); }
-.game-card.assets:hover { border-color: var(--accent-assets); }
+.nav-links a:hover { color: var(--accent-light); }
 
-.card-image { height: 180px; background-size: cover; background-position: center; }
-.card-content { padding: 25px; }
-
-.tag { font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-weight: bold; }
-
-.btn {
-    display: block; width: 100%; padding: 12px 0; text-align: center;
-    border-radius: 8px; text-decoration: none; font-weight: bold;
+/* Hero & Glitch */
+.hero {
+    height: 70vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding-top: 100px;
 }
 
-.social-section { text-align: center; padding: 20px; }
-.social-grid { display: flex; justify-content: center; gap: 20px; }
-.social-icon { font-size: 2rem; color: var(--text-main); transition: 0.3s; }
-.social-icon:hover { color: var(--accent-blue); transform: scale(1.2); }
+.glitch {
+    font-size: 5rem; font-weight: bold;
+    color: white; position: relative;
+}
 
-footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem; }
+.glitch:hover::before, .glitch:hover::after {
+    content: attr(data-text);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.glitch:hover::before { left: 2px; text-shadow: -2px 0 #ff00c1; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim 5s infinite linear alternate-reverse; }
+.glitch:hover::after { left: -2px; text-shadow: -2px 0 #00fff9; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim2 5s infinite linear alternate-reverse; }
+
+@keyframes glitch-anim { 0% { clip: rect(10px, 9999px, 20px, 0); } 100% { clip: rect(80px, 9999px, 90px, 0); } }
+@keyframes glitch-anim2 { 0% { clip: rect(40px, 9999px, 50px, 0); } 100% { clip: rect(10px, 9999px, 30px, 0); } }
+
+.hero-tagline { color: var(--accent-light); letter-spacing: 5px; font-size: 0.8rem; margin-top: -10px; }
+
+.hero-links { margin-top: 30px; display: flex; gap: 20px; }
+.hero-links a {
+    color: #fff; text-decoration: none; border: 1px solid var(--glass-border);
+    padding: 10px 20px; border-radius: 5px; transition: 0.3s; background: var(--glass);
+}
+.hero-links a:hover { background: var(--accent); border-color: var(--accent); }
+
+/* Secciones y Cards */
+.container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+.section-title { color: var(--accent-light); border-left: 4px solid var(--accent); padding-left: 15px; margin: 60px 0 30px; }
+
+.featured-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0,0,0,0.5));
+    border: 1px solid var(--accent); padding: 40px; border-radius: 20px;
+}
+
+.badge { background: var(--accent); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+
+.tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.glass-card {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); transition: 0.3s;
+}
+.glass-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.tool-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+
+.music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+.music-card {
+    background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+    padding: 20px; text-decoration: none; color: #fff; border-radius: 10px;
+    text-align: center; transition: 0.3s; font-size: 0.9rem;
+}
+.music-card:hover { background: var(--accent); border-color: #fff; }
+
+footer { padding: 60px; text-align: center; border-top: 1px solid var(--glass-border); margin-top: 100px; }
