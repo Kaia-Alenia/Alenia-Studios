@@ -12,12 +12,14 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="brand">ALENIA STUDIOS</div>
-        <div class="lang-picker">
-            <select onchange="changeLang(this.value)">
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="jp">日本語</option>
-                <option value="zh">中文</option>
+        
+        <div class="lang-wrapper">
+            <i class="fas fa-globe"></i>
+            <select id="langSelect" onchange="changeLang(this.value)">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="jp">JP</option>
+                <option value="zh">ZH</option>
             </select>
         </div>
     </div>
@@ -41,19 +43,19 @@
                 <span class="tag">v2.2</span>
                 <h3>Audio Porter</h3>
                 <p data-i18n="ap_desc">Smart audio optimizer for Godot and Ren'Py.</p>
-                <a href="https://alenia-studios.itch.io/" class="btn-sm">Get Tool</a>
+                <a href="https://alenia-studios.itch.io/audio-porter-alenia" class="btn-sm" data-i18n="btn_get">Get Tool</a>
             </div>
             <div class="card">
                 <span class="tag">Utility</span>
                 <h3>Alenia Optimizer</h3>
                 <p data-i18n="ao_desc">System maintenance for high-performance creative work.</p>
-                <a href="https://alenia-studios.itch.io/alenia-optimizer" class="btn-sm">Download</a>
+                <a href="https://alenia-studios.itch.io/alenia-optimizer" class="btn-sm" data-i18n="btn_download">Download</a>
             </div>
             <div class="card featured">
                 <span class="tag">Game</span>
                 <h3>Gatekeeper</h3>
                 <p data-i18n="gk_desc">The Echo Corp Leak: Desktop horror experience.</p>
-                <a href="https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak" class="btn-sm">Access Case</a>
+                <a href="https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak" class="btn-sm" data-i18n="btn_access">Access Case</a>
             </div>
         </div>
     </section>
