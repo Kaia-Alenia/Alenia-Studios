@@ -3,7 +3,7 @@
 
 Welcome to the official repository of **Alenia Studios**. We are an independent studio specialized in game optimization, software tools, and high-fidelity audio assets for the indie gamedev community.
 
-[Website]([https://kaia-alenia.github.io/alenia-studios/) • [Itch.io](https://alenia-studios.itch.io/) • [Booth.pm](https://alenia-studios.booth.pm/)
+[Website](https://kaia-alenia.github.io/Alenia-Studios/) • [Itch.io](https://alenia-studios.itch.io/) • [Booth.pm](https://alenia-studios.booth.pm/)
 
 ---
 
