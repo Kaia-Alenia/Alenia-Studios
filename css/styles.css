@@ -3,11 +3,11 @@
 
 :root {
     --bg-color: #0a0b10;
-    --card-bg: rgba(22, 27, 34, 0.6); /* Más transparencia para el efecto glass */
+    --card-bg: rgba(22, 27, 34, 0.7);
     --accent-blue: #58a6ff;
-    --accent-purple: #bc8cff;
-    --accent-roblox: #ee3333; /* Rojo oficial de Roblox */
-    --accent-itch: #fa5c5c;    /* Rojo/Rosado de Itch */
+    --accent-tool: #4ade80;
+    --accent-itch: #fa5c5c;
+    --accent-assets: #bc8cff;
     --text-main: #c9d1d9;
     --text-muted: #8b949e;
 }
@@ -16,17 +16,12 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
     margin: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
-    
-    /* FONDO ANIMADO */
     background: linear-gradient(-45deg, #050505, #161b22, #1f102e, #0a0b10);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 15s ease infinite; /* Tu fondo favorito */
     min-height: 100vh;
 }
 
-/* Animación del Fondo */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -35,51 +30,28 @@ body {
 
 h1, h2, h3, .mono-font { font-family: 'JetBrains Mono', monospace; }
 
-/* HEADER */
-header {
-    padding: 80px 20px 40px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
+header { padding: 80px 20px 40px; text-align: center; }
 
 h1 {
     font-size: 3.5rem;
     margin: 0;
-    letter-spacing: -2px;
     background: linear-gradient(90deg, #fff, var(--accent-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 30px rgba(88, 166, 255, 0.2);
-    animation: glow 3s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 20px rgba(88, 166, 255, 0.2); }
-    to { text-shadow: 0 0 40px rgba(88, 166, 255, 0.6); }
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-top: 10px;
 }
 
 .container { max-width: 1100px; margin: auto; padding: 20px; }
 
-/* TÍTULOS DE SECCIÓN */
 .section-title {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 30px;
-    padding-bottom: 10px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     color: var(--accent-blue);
-    font-size: 1.8rem;
 }
 
-/* GRID DEL CATÁLOGO (Juegos) */
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -87,152 +59,33 @@ h1 {
     margin-bottom: 60px;
 }
 
-/* TARJETAS DE CATÁLOGO */
 .game-card {
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
     overflow: hidden;
     backdrop-filter: blur(12px);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    transition: 0.3s;
 }
 
-.game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    border-color: rgba(255,255,255,0.3);
-}
+.game-card:hover { transform: translateY(-10px); }
+.game-card.itch:hover { border-color: var(--accent-itch); }
+.game-card.tool:hover { border-color: var(--accent-tool); }
+.game-card.assets:hover { border-color: var(--accent-assets); }
 
-/* Efecto de borde brillante según plataforma */
-.game-card.itch:hover { border-color: var(--accent-itch); box-shadow: 0 10px 30px rgba(250, 92, 92, 0.2); }
-.game-card.roblox:hover { border-color: var(--accent-roblox); box-shadow: 0 10px 30px rgba(238, 51, 51, 0.2); }
-.game-card.kaia:hover { border-color: var(--accent-purple); box-shadow: 0 10px 30px rgba(188, 140, 255, 0.2); }
+.card-image { height: 180px; background-size: cover; background-position: center; }
+.card-content { padding: 25px; }
 
-/* Imagen de portada de la tarjeta */
-.card-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-.card-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; width: 100%; height: 50%;
-    background: linear-gradient(to top, var(--card-bg), transparent);
-}
-
-.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-
-.card-tags {
-    margin-bottom: 15px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.tag {
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.1);
-    color: var(--text-main);
-    font-weight: 600;
-}
-
-.game-title {
-    font-size: 1.4rem;
-    margin: 0 0 10px 0;
-    color: #fff;
-}
-
-.game-desc {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-/* BOTONES DE TARJETA */
-.card-actions { margin-top: auto; }
+.tag { font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-weight: bold; }
 
 .btn {
-    display: block;
-    width: 100%;
-    padding: 12px 0;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border: 1px solid transparent;
+    display: block; width: 100%; padding: 12px 0; text-align: center;
+    border-radius: 8px; text-decoration: none; font-weight: bold;
 }
 
-.btn:hover { background: rgba(255,255,255,0.2); }
-.btn-primary { background: var(--accent-blue); color: #0a0b10; }
-.btn-primary:hover { background: #79b8ff; }
+.social-section { text-align: center; padding: 20px; }
+.social-grid { display: flex; justify-content: center; gap: 20px; }
+.social-icon { font-size: 2rem; color: var(--text-main); transition: 0.3s; }
+.social-icon:hover { color: var(--accent-blue); transform: scale(1.2); }
 
-/* SECCIÓN REDES SOCIALES (Compacta) */
-.social-section {
-    background: rgba(0,0,0,0.3);
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.social-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.social-icon {
-    width: 50px; height: 50px;
-    display: flex; align-items: center; justify-content: center;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.social-icon:hover {
-    background: var(--accent-blue);
-    color: #000;
-    transform: scale(1.1) rotate(5deg);
-}
-
-/* SECCIÓN OCULTA (Pie de página) */
-.restricted-zone {
-    margin-top: 80px;
-    padding: 20px;
-    text-align: center;
-    opacity: 0.6;
-    transition: opacity 0.3s;
-}
-.restricted-zone:hover { opacity: 1; }
-
-.restricted-links a {
-    color: var(--accent-red); /* Si no está definida usa un rojo */
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
+footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.8rem; }
