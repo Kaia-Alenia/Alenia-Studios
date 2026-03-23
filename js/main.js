@@ -41,20 +41,25 @@ const i18n = {
     }
 };
 
-function changeLang(lang) {
+// Forzamos la función al scope global
+window.changeLang = function(lang) {
     const texts = i18n[lang];
+    if (!texts) return;
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (texts[key]) {
-            el.innerText = texts[key];
+            el.textContent = texts[key];
         }
     });
     localStorage.setItem('alenia_lang', lang);
-}
+};
 
-// Carga inicial
 document.addEventListener('DOMContentLoaded', () => {
     const saved = localStorage.getItem('alenia_lang') || 'en';
-    document.getElementById('langSelect').value = saved;
-    changeLang(saved);
+    const selector = document.getElementById('langSelect');
+    if (selector) {
+        selector.value = saved;
+        window.changeLang(saved);
+    }
 });
