@@ -3,96 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alenia Studios | Indie Games & Tools</title>
-    <meta name="description" content="Alenia Studios: Desarrollo de videojuegos, herramientas de optimización y librerías musicales.">
+    <title>Alenia Studios | Official Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header>
-    <h1>ALENIA STUDIOS</h1>
-    <p class="tagline mono-font">>> ELEVATING INDIE GAMES WITH ATMOSPHERIC SOUNDSCAPES & TOOLS <<</p>
+<nav class="glass-nav">
+    <div class="nav-content">
+        <span class="logo mono-font">ALENIA_STUDIOS</span>
+        <div class="nav-links">
+            <a href="#games">Games</a>
+            <a href="#tools">Tools</a>
+            <a href="#music">Music</a>
+            <a href="https://alenia-studios.itch.io/" class="nav-btn" target="_blank">Itch.io</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1 class="glitch mono-font" data-text="ALENIA STUDIOS">ALENIA STUDIOS</h1>
+    <p class="hero-tagline">> SOFTWARE DEVELOPMENT & AUDIO ENGINEERING <</p>
+    <div class="hero-links">
+        <a href="https://alenia-studios.itch.io/" target="_blank"><i class="fab fa-itch-io"></i> Itch.io</a>
+        <a href="https://alenia-studios.booth.pm/" target="_blank"><i class="fas fa-store"></i> Booth.pm</a>
+        <a href="https://github.com/Kaia-Alenia" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
 </header>
 
-<div class="container">
+<main class="container">
     
-    <h2 class="section-title"><i class="fas fa-microchip"></i> Proyectos Activos</h2>
-
-    <div class="catalog-grid">
-        
-        <div class="game-card itch">
-            <div class="card-image" style="background-image: url('https://placehold.co/600x300/1a1a1a/fa5c5c?text=GATEKEEPER:+THE+LEAK');"></div>
-            <div class="card-content">
-                <div class="card-tags">
-                    <span class="tag" style="background: #fa5c5c; color: #000;">GAME</span>
-                    <span class="tag">HORROR</span>
-                    <span class="tag">MOBILE COMING SOON</span>
-                </div>
-                <h3 class="game-title mono-font">Gatekeeper: Echo Corp</h3>
-                <p class="game-desc">Investiga los archivos filtrados de Echo Corp en esta simulación de escritorio maldita. La versión móvil está en etapas finales.</p>
-                <div class="card-actions">
-                    <a href="https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-itch-io"></i> Ver en Itch.io
-                    </a>
-                </div>
+    <section id="games">
+        <h2 class="section-title"><i class="fas fa-ghost"></i> Featured Project</h2>
+        <div class="featured-card">
+            <div class="featured-content">
+                <span class="badge">LATEST RELEASE</span>
+                <h3 class="mono-font">Gatekeeper: The Echo Corp Leak</h3>
+                <p>Un simulador de hacking y horror psicológico. Sumérgete en los archivos secretos de una corporación que nunca debió existir. <strong>Versión móvil en desarrollo final.</strong></p>
+                <a href="https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak" class="btn-main" target="_blank">Jugar Ahora</a>
             </div>
         </div>
+    </section>
 
-        <div class="game-card tool">
-            <div class="card-image" style="background-image: url('https://placehold.co/600x300/1a1a1a/4ade80?text=AUDIO+PORTER+v2.2');"></div>
-            <div class="card-content">
-                <div class="card-tags">
-                    <span class="tag" style="background: #4ade80; color: #000;">TOOL</span>
-                    <span class="tag">REN'PY</span>
-                    <span class="tag">GODOT</span>
-                </div>
-                <h3 class="game-title mono-font">Alenia Audio Porter</h3>
-                <p class="game-desc">Optimizador inteligente de audio y video. Reduce el peso de tus builds con un solo clic y genera código automático.</p>
-                <div class="card-actions">
-                    <a href="https://alenia-studios.itch.io/" target="_blank" class="btn" style="background: #4ade80; color: #000;">
-                        <i class="fas fa-wrench"></i> Descargar v2.2
-                    </a>
-                </div>
+    <section id="tools">
+        <h2 class="section-title"><i class="fas fa-terminal"></i> Development Tools</h2>
+        <div class="tools-grid">
+            <div class="glass-card">
+                <i class="fas fa-sliders-h tool-icon"></i>
+                <h3 class="mono-font">Audio Porter 2.2</h3>
+                <p>Optimización inteligente para Ren'Py y Godot. Exportación a OGG/OPUS y generación de código automática.</p>
+                <a href="https://alenia-studios.itch.io/" class="tool-link">Get Tool <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-bolt tool-icon"></i>
+                <h3 class="mono-font">Alenia Optimizer</h3>
+                <p>Software de limpieza y optimización de sistema diseñado para creadores con hardware limitado.</p>
+                <a href="https://alenia-studios.itch.io/alenia-optimizer" class="tool-link">Clean System <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
+    </section>
 
-        <div class="game-card assets">
-            <div class="card-image" style="background-image: url('https://placehold.co/600x300/1a1a1a/bc8cff?text=SOUNDTRACK+LIBRARY');"></div>
-            <div class="card-content">
-                <div class="card-tags">
-                    <span class="tag" style="background: #bc8cff; color: #000;">MUSIC</span>
-                    <span class="tag">PIXEL ART</span>
-                    <span class="tag">8-BIT</span>
-                </div>
-                <h3 class="game-title mono-font">Asset Library</h3>
-                <p class="game-desc">Colecciones musicales premium: Forgotten Realms, Neon Horizons y más. Diseñadas para un impacto inmediato.</p>
-                <div class="card-actions">
-                    <a href="https://alenia-studios.itch.io/" target="_blank" class="btn" style="border: 1px solid #bc8cff; color: #bc8cff;">
-                        <i class="fas fa-music"></i> Explorar Álbumes
-                    </a>
-                </div>
-            </div>
+    <section id="music">
+        <h2 class="section-title"><i class="fas fa-compact-disc"></i> Sound Asset Library</h2>
+        <div class="music-grid">
+            <a href="https://alenia-studios.itch.io/forgotten-realms" class="music-card">
+                <span>⚔️ Forgotten Realms</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/neon-horizons" class="music-card">
+                <span>🌠 Neon Horizons</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/lo-fi-themes-8bits" class="music-card">
+                <span>☕ Coffee Break</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/digital-melancholy-8-bit-cyberpunk-lo-fi-asset-pack" class="music-card">
+                <span>🎼 Digital Melancholy</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/alenias-void" class="music-card">
+                <span>🌑 Alenia's Void</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/analog-dreams" class="music-card">
+                <span>📻 Analog Dreams</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/starter-kit-heros" class="music-card">
+                <span>🛡️ Starter Heroes</span>
+            </a>
+            <a href="https://alenia-studios.itch.io/handcrafted-ost" class="music-card">
+                <span>🎻 Handcrafted OST</span>
+            </a>
         </div>
+    </section>
 
-    </div>
-
-    <h2 class="section-title"><i class="fas fa-share-nodes"></i> Conexiones</h2>
-    <div class="social-section">
-        <div class="social-grid">
-            <a href="https://github.com/Kaia-Alenia" class="social-icon" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Alenia_Studios_" class="social-icon" title="Twitter/X" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://bsky.app/profile/aleniastudios.bsky.social" class="social-icon" title="Bluesky" target="_blank"><i class="fas fa-cloud"></i></a>
-            <a href="mailto:contact.aleniastudios@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-
-</div>
+</main>
 
 <footer>
-    <p>&copy; 2026 Alenia Studios. Santiago de Querétaro, MX.</p>
+    <div class="footer-content">
+        <p class="mono-font">ALENIA STUDIOS // 2026</p>
+        <p>Santiago de Querétaro, México</p>
+    </div>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>
