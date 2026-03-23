@@ -3,7 +3,7 @@ on:
   push:
     branches: ["main"]
 env:
-  # Solución para la deprecación de Node.js 20
+  # Fuerza el uso de Node.js 24 para evitar la deprecación
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   build:
