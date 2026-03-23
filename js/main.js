@@ -1,46 +1,60 @@
 const i18n = {
     en: {
-        nav_news: "News", nav_software: "Software", nav_audio: "Audio", nav_faq: "FAQ",
-        hero_title: "ALENIA STUDIOS", hero_subtitle: "ADVANCED INDIE SOLUTIONS & SOUNDSCAPES",
-        title_news: "Latest Updates", title_software: "Engineering & Games", title_audio: "Audio Vault",
-        news_ap_desc: "Native Godot & Ren'Py support released.",
-        gk_desc_short: "Desktop-horror simulation. Uncover the secrets of Echo Corp.",
-        faq_q1: "Is Audio Porter free?", faq_a1: "Basic versions are on Itch.io. Support us for more features."
+        hero_title: "Precision & Sound",
+        hero_desc: "Independent studio specialized in game optimization and atmospheric audio engineering.",
+        title_software: "Software & Tools",
+        title_audio: "Audio Assets",
+        ap_desc: "Smart audio optimizer for Godot and Ren'Py.",
+        ao_desc: "System maintenance for high-performance creative work.",
+        gk_desc: "The Echo Corp Leak: Desktop horror experience.",
+        btn_get: "Get Tool", btn_download: "Download", btn_access: "Access Case"
     },
     es: {
-        nav_news: "Noticias", nav_software: "Software", nav_audio: "Música", nav_faq: "Preguntas",
-        hero_title: "ALENIA STUDIOS", hero_subtitle: "SOLUCIONES INDIE Y PAISAJES SONOROS",
-        title_news: "Últimas Noticias", title_software: "Ingeniería y Juegos", title_audio: "Bóveda de Audio",
-        news_ap_desc: "Lanzado soporte nativo para Godot y Ren'Py.",
-        gk_desc_short: "Simulación de horror. Descubre los secretos de Echo Corp.",
-        faq_q1: "¿Es gratis Audio Porter?", faq_a1: "Versiones básicas en Itch.io. Apoya el estudio para más funciones."
+        hero_title: "Precisión y Sonido",
+        hero_desc: "Estudio independiente especializado en optimización de juegos e ingeniería de audio atmosférico.",
+        title_software: "Software y Herramientas",
+        title_audio: "Assets de Audio",
+        ap_desc: "Optimizado inteligente para Godot y Ren'Py.",
+        ao_desc: "Mantenimiento de sistema para trabajo creativo de alto rendimiento.",
+        gk_desc: "The Echo Corp Leak: Experiencia de horror simulado.",
+        btn_get: "Obtener", btn_download: "Descargar", btn_access: "Acceder"
     },
     jp: {
-        nav_news: "ニュース", nav_software: "ソフトウェア", nav_audio: "オーディオ", nav_faq: "よくある質問",
-        hero_title: "ALENIA STUDIOS", hero_subtitle: "高度なインディーソリューションとサウンドスケープ",
-        title_news: "最新情報", title_software: "エンジニアリングとゲーム", title_audio: "オーディオバルト",
-        news_ap_desc: "GodotとRen'Pyのネイティブサポートがリリースされました。",
-        gk_desc_short: "デスクトップホラーシミュレーション。Echo Corpの秘密を暴け。"
+        hero_title: "精度と音響",
+        hero_desc: "ゲームの最適化と没入感のある音響エンジニアリングを専門とする独立系スタジオ。",
+        title_software: "ソフトウェアとツール",
+        title_audio: "オーディオアセット",
+        ap_desc: "GodotおよびRen'Py用のスマートオーディオ最適化ツール。",
+        ao_desc: "クリエイティブな作業のためのシステムメンテナンスツール。",
+        gk_desc: "The Echo Corp Leak：デスクトップホラー体験。",
+        btn_get: "入手する", btn_download: "ダウンロード", btn_access: "アクセス"
     },
     zh: {
-        nav_news: "新闻", nav_software: "软件", nav_audio: "音频", nav_faq: "常见问题",
-        hero_title: "ALENIA STUDIOS", hero_subtitle: "先进的独立游戏解决方案与音景",
-        title_news: "最新动态", title_software: "工程与游戏", title_audio: "音频库",
-        news_ap_desc: "发布了对 Godot 和 Ren'Py 的原生支持。",
-        gk_desc_short: "桌面恐怖模拟。揭开 Echo Corp 的秘密。"
+        hero_title: "精准与音效",
+        hero_desc: "专门从事游戏优化和大气音频工程的独立工作室。",
+        title_software: "软件与工具",
+        title_audio: "音频资源",
+        ap_desc: "适用于 Godot 和 Ren'Py 的智能音频优化器。",
+        ao_desc: "用于高性能创意工作的系统维护工具。",
+        gk_desc: "The Echo Corp Leak：桌面恐怖模拟体验。",
+        btn_get: "获取工具", btn_download: "下载", btn_access: "进入案例"
     }
 };
 
-function updateLanguage(lang) {
+function changeLang(lang) {
+    const texts = i18n[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (i18n[lang][key]) el.innerText = i18n[lang][key];
+        if (texts[key]) {
+            el.innerText = texts[key];
+        }
     });
     localStorage.setItem('alenia_lang', lang);
 }
 
+// Carga inicial
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('alenia_lang') || 'en';
-    document.querySelector('.lang-select').value = savedLang;
-    updateLanguage(savedLang);
+    const saved = localStorage.getItem('alenia_lang') || 'en';
+    document.getElementById('langSelect').value = saved;
+    changeLang(saved);
 });
