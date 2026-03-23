@@ -1,76 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alenia Studios | Official Global Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
 <nav class="glass-nav">
     <div class="nav-content">
-        <div class="logo-area">
-            <span class="logo glitch" data-text="ALENIA">ALENIA</span>
-        </div>
+        <span class="logo glitch" data-text="ALENIA_STUDIOS">ALENIA_STUDIOS</span>
         <div class="nav-links">
-            <a href="#games" data-i18n="nav_games">Games</a>
-            <a href="#tools" data-i18n="nav_tools">Tools</a>
-            <a href="#music" data-i18n="nav_music">Music</a>
+            <a href="#news" data-i18n="nav_news">News</a>
+            <a href="#software" data-i18n="nav_software">Software</a>
+            <a href="#audio" data-i18n="nav_audio">Audio</a>
             <a href="#faq" data-i18n="nav_faq">FAQ</a>
         </div>
-        <div class="lang-selector">
-            <select onchange="setLanguage(this.value)" class="lang-select">
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-                <option value="jp">JP</option>
-                <option value="zh">ZH</option>
+        <div class="lang-control">
+            <select onchange="updateLanguage(this.value)" class="lang-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="jp">日本語</option>
+                <option value="zh">中文</option>
             </select>
         </div>
     </div>
 </nav>
 
-<section class="news-banner">
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span data-i18n="news_desc">Audio Porter v2.2 released!</span> | 
-            <span>Gatekeeper Mobile entering Final Stage</span> | 
-            <span>New Album: Handcrafted OST out now!</span>
+<header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="glitch-title" data-i18n="hero_title">ALENIA STUDIOS</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">ADVANCED INDIE SOLUTIONS & SOUNDSCAPES</p>
+        <div class="quick-links">
+            <a href="https://alenia-studios.itch.io/" target="_blank" class="hub-btn itch"><i class="fab fa-itch-io"></i> Itch.io</a>
+            <a href="https://alenia-studios.booth.pm/" target="_blank" class="hub-btn booth"><i class="fas fa-shopping-bag"></i> Booth.pm</a>
+            <a href="https://github.com/Kaia-Alenia" target="_blank" class="hub-btn github"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </div>
-</section>
+</header>
 
-<main class="container">
-    <section id="tools" class="grid-section">
-        <h2 class="section-header">Core Engineering</h2>
-        <div class="professional-grid">
-            <div class="pro-card">
-                <div class="pro-tag">v2.2 PRO</div>
-                <h3>Audio Porter</h3>
-                <p>Advanced audio optimization for Godot and Ren'Py engines.</p>
-                <div class="pro-actions">
-                    <a href="https://alenia-studios.itch.io/" class="btn-pro">View Tool</a>
-                    <a href="https://github.com/Kaia-Alenia" class="btn-outline"><i class="fab fa-github"></i> Source</a>
-                </div>
+<div class="main-container">
+    
+    <section id="news" class="section-block">
+        <h2 class="section-title"><span class="neon-line"></span> <span data-i18n="title_news">Latest Updates</span></h2>
+        <div class="news-ticker-pro">
+            <div class="news-item">
+                <span class="status-tag pulse">NEW</span>
+                <p><strong data-i18n="news_ap_title">Audio Porter v2.2:</strong> <span data-i18n="news_ap_desc">Native Godot & Ren'Py support released.</span></p>
             </div>
-            <div class="pro-card">
-                <div class="pro-tag">UTILITY</div>
+            <div class="news-item">
+                <span class="status-tag">DEV</span>
+                <p><strong data-i18n="news_gk_title">Gatekeeper Mobile:</strong> <span data-i18n="news_gk_desc">Final optimization stage in progress.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="software" class="section-block">
+        <h2 class="section-title"><span class="neon-line"></span> <span data-i18n="title_software">Engineering & Games</span></h2>
+        <div class="pro-grid">
+            <div class="pro-card glass-effect">
+                <div class="card-header">🛠️ TOOLS</div>
+                <h3>Audio Porter 2.2</h3>
+                <p data-i18n="ap_desc_short">The 1-click optimizer for OGG/OPUS formats with auto-code generation.</p>
+                <a href="https://alenia-studios.itch.io/" class="card-btn">Open Project</a>
+            </div>
+            <div class="pro-card glass-effect">
+                <div class="card-header">🚀 UTILITY</div>
                 <h3>Alenia Optimizer</h3>
-                <p>High-performance system cleaning and optimization suite.</p>
-                <a href="https://alenia-studios.itch.io/alenia-optimizer" class="btn-pro">Download</a>
+                <p data-i18n="ao_desc_short">Custom system cleaning suite designed for performance-critical environments.</p>
+                <a href="https://alenia-studios.itch.io/alenia-optimizer" class="card-btn">Download</a>
+            </div>
+            <div class="pro-card glass-effect featured">
+                <div class="card-header">👁️ HORROR</div>
+                <h3>Gatekeeper: The Leak</h3>
+                <p data-i18n="gk_desc_short">Desktop-horror simulation. Uncover the secrets of Echo Corp.</p>
+                <a href="https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak" class="card-btn">Access Files</a>
             </div>
         </div>
     </section>
 
-    <section id="music">
-        <h2 class="section-header">Official Discography</h2>
-        <div class="album-grid">
-            <a href="https://alenia-studios.itch.io/forgotten-realms" class="album-item">⚔️ Forgotten Realms</a>
-            <a href="https://alenia-studios.itch.io/neon-horizons" class="album-item">🌠 Neon Horizons</a>
-            <a href="https://alenia-studios.itch.io/lo-fi-themes-8bits" class="album-item">☕ Coffee Break</a>
-            <a href="https://alenia-studios.itch.io/digital-melancholy-8-bit-cyberpunk-lo-fi-asset-pack" class="album-item">🎼 Digital Melancholy</a>
-            <a href="https://alenia-studios.itch.io/alenias-void" class="album-item">🌑 Alenia's Void</a>
-            <a href="https://alenia-studios.itch.io/analog-dreams" class="album-item">📻 Analog Dreams</a>
-            <a href="https://alenia-studios.itch.io/starter-kit-heros" class="album-item">🛡️ Starter Heroes</a>
-            <a href="https://alenia-studios.itch.io/handcrafted-ost" class="album-item">🎻 Handcrafted OST</a>
+    <section id="audio" class="section-block">
+        <h2 class="section-title"><span class="neon-line"></span> <span data-i18n="title_audio">Audio Vault</span></h2>
+        <div class="album-catalog">
+            <a href="https://alenia-studios.itch.io/forgotten-realms" class="album-link">⚔️ Forgotten Realms</a>
+            <a href="https://alenia-studios.itch.io/neon-horizons" class="album-link">🌠 Neon Horizons</a>
+            <a href="https://alenia-studios.itch.io/lo-fi-themes-8bits" class="album-link">☕ Coffee Break</a>
+            <a href="https://alenia-studios.itch.io/digital-melancholy-8-bit-cyberpunk-lo-fi-asset-pack" class="album-link">🎼 Digital Melancholy</a>
+            <a href="https://alenia-studios.itch.io/alenias-void" class="album-link">🌑 Alenia's Void</a>
+            <a href="https://alenia-studios.itch.io/analog-dreams" class="album-link">📻 Analog Dreams</a>
+            <a href="https://alenia-studios.itch.io/starter-kit-heros" class="album-link">🛡️ Starter Heroes</a>
+            <a href="https://alenia-studios.itch.io/handcrafted-ost" class="album-link">🎻 Handcrafted OST</a>
         </div>
     </section>
 
-    <section id="faq" class="faq-container">
-        <h2 class="section-header">FAQ</h2>
-        <div class="faq-item">
-            <h4 data-i18n="faq_q1">Support for other engines?</h4>
-            <p data-i18n="faq_a1">Currently focused on Godot and Ren'Py, with Unity support in roadmap.</p>
+    <section id="faq" class="section-block">
+        <h2 class="section-title"><span class="neon-line"></span> FAQ</h2>
+        <div class="faq-grid">
+            <div class="faq-item glass-effect">
+                <h4 data-i18n="faq_q1">Is Audio Porter free?</h4>
+                <p data-i18n="faq_a1">Basic versions are available on Itch.io. Support Alenia Studios for advanced features.</p>
+            </div>
+            <div class="faq-item glass-effect">
+                <h4 data-i18n="faq_q2">Global Support?</h4>
+                <p data-i18n="faq_a2">We are expanding to Japanese and Chinese markets with localized assets.</p>
+            </div>
         </div>
     </section>
-</main>
+</div>
+
+<footer class="pro-footer">
+    <div class="footer-line"></div>
+    <p>ALENIA STUDIOS // Santiago de Querétaro, MX // Global Ops</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
