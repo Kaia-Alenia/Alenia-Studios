@@ -1,19 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap');
 
 :root {
     --accent: #8b5cf6;
-    --bg-dark: #050505;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+    --text-dim: #a3a3a3;
+    --bg-card: rgba(255, 255, 255, 0.05);
 }
 
+* { box-sizing: border-box; }
 body {
-    background: linear-gradient(-45deg, #050505, #0a0a14, #140a1e, #050505);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite; /* Tu fondo favorito optimizado */
-    color: #e0e0e0;
-    font-family: 'Inter', sans-serif;
     margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: linear-gradient(-45deg, #050505, #111111, #1a0f2e, #050505);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Tu fondo se mantiene */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes gradientBG {
@@ -22,35 +27,96 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* DASHBOARD STYLE CARDS */
-.pro-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
+/* NAVBAR CENTRADA */
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 100;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand { font-family: 'JetBrains Mono'; font-weight: bold; letter-spacing: 2px; }
+
+/* HERO SECCIÓN */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    max-width: 800px;
+}
+
+h1 { font-size: 3.5rem; margin: 0 0 10px; font-weight: 300; }
+.hero p { color: var(--text-dim); font-size: 1.1rem; }
+
+/* GRIDS PROFESIONALES */
+.content-wrapper { width: 100%; max-width: 1000px; padding: 0 20px; }
+
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin: 60px 0 30px;
+    text-align: center;
+}
+
+.grid-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 30px;
-    border-radius: 4px; /* Bordes rectos = Profesionalismo */
+    border-radius: 12px;
     transition: 0.3s;
 }
 
-.pro-card:hover {
-    border-color: var(--accent);
-    background: rgba(139, 92, 246, 0.05);
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+.tag { font-size: 0.7rem; color: var(--accent); font-family: 'JetBrains Mono'; display: block; margin-bottom: 10px; }
+
+.btn-sm {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--accent);
 }
 
-.glitch-title {
-    font-size: 5rem;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 10px;
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+/* MÚSICA: REJILLA SIMÉTRICA */
+.grid-music {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 100px;
 }
 
-/* TICKER DE NOTICIAS */
-.news-ticker-pro {
-    background: rgba(0,0,0,0.5);
-    border: 1px solid var(--accent);
-    padding: 15px;
+.music-item {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: 0.3s;
 }
 
-.status-tag.pulse {
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
-}
+.music-item:hover { color: #fff; background: var(--accent); border-color: #fff; }
+
+.footer { padding: 60px; color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; }
