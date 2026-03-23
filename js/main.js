@@ -1,56 +1,47 @@
-/* js/main.js */
-console.log("%c SYSTEM ONLINE ", "background: #58a6ff; color: #000; padding: 4px; font-weight: bold; border-radius: 4px;");
-console.log("%c Welcome to Alenia Studios Terminals.", "color: #8b949e; font-family: monospace;");
-console.log("K.A.I.A. is watching...");
-
-// Aquí podrás agregar animaciones futuras o interacciones
-const translations = {
+const i18n = {
     en: {
-        nav_games: "Games", nav_tools: "Tools", nav_music: "Music", nav_faq: "FAQ",
-        hero_tag: "> SOFTWARE DEVELOPMENT & AUDIO ENGINEERING <",
-        latest_title: "NEW RELEASE",
-        news_desc: "Audio Porter v2.2: Now with Godot support and Smart Scan.",
-        faq_q1: "How to use Audio Porter?",
-        faq_a1: "Select your folder, choose the engine (Ren'Py/Godot) and click optimize.",
-        // ... (añadir más llaves)
+        nav_news: "News", nav_software: "Software", nav_audio: "Audio", nav_faq: "FAQ",
+        hero_subtitle: "ADVANCED INDIE SOLUTIONS & SOUNDSCAPES",
+        title_news: "Latest Updates", title_software: "Engineering & Games", title_audio: "Audio Vault",
+        news_ap_desc: "Native Godot & Ren'Py support released.",
+        gk_desc_short: "Desktop-horror simulation. Uncover the secrets of Echo Corp.",
+        faq_q1: "Commercial use?", faq_a1: "All music assets include a commercial license for indie projects."
     },
     es: {
-        nav_games: "Juegos", nav_tools: "Herramientas", nav_music: "Música", nav_faq: "Preguntas",
-        hero_tag: "> DESARROLLO DE SOFTWARE E INGENIERÍA DE AUDIO <",
-        latest_title: "NUEVO LANZAMIENTO",
-        news_desc: "Audio Porter v2.2: Ahora con soporte para Godot y Smart Scan.",
-        faq_q1: "¿Cómo usar Audio Porter?",
-        faq_a1: "Selecciona tu carpeta, elige el motor (Ren'Py/Godot) y optimiza.",
+        nav_news: "Noticias", nav_software: "Software", nav_audio: "Música", nav_faq: "Preguntas",
+        hero_subtitle: "SOLUCIONES INDIE Y PAISAJES SONOROS",
+        title_news: "Últimas Noticias", title_software: "Ingeniería y Juegos", title_audio: "Bóveda de Audio",
+        news_ap_desc: "Lanzado soporte nativo para Godot y Ren'Py.",
+        gk_desc_short: "Simulación de horror. Descubre los secretos de Echo Corp.",
+        faq_q1: "¿Uso comercial?", faq_a1: "Todos los assets musicales incluyen licencia comercial para proyectos indie."
     },
     jp: {
-        nav_games: "ゲーム", nav_tools: "ツール", nav_music: "音楽", nav_faq: "よくある質問",
-        hero_tag: "> ソフトウェア開発とオーディオエンジニアリング <",
-        latest_title: "最新リリース",
-        news_desc: "Audio Porter v2.2：Godotサポートとスマートスキャンを搭載。",
-        faq_q1: "Audio Porterの使い方は？",
-        faq_a1: "フォルダを選択し、エンジン（Ren'Py/Godot）を選んで最適化をクリックします。",
+        nav_news: "ニュース", nav_software: "ソフトウェア", nav_audio: "オーディオ", nav_faq: "よくある質問",
+        hero_subtitle: "高度なインディーソリューションとサウンドスケープ",
+        title_news: "最新情報", title_software: "エンジニアリングとゲーム", title_audio: "オーディオバルト",
+        news_ap_desc: "GodotとRen'Pyのネイティブサポートがリリースされました。",
+        gk_desc_short: "デスクトップホラーシミュレーション。Echo Corpの秘密を暴け。"
     },
     zh: {
-        nav_games: "游戏", nav_tools: "工具", nav_music: "音乐", nav_faq: "常见问题",
-        hero_tag: "> 软件开发与音频工程 <",
-        latest_title: "最新发布",
-        news_desc: "Audio Porter v2.2：现已支持 Godot 和智能扫描。",
-        faq_q1: "如何使用 Audio Porter？",
-        faq_a1: "选择文件夹，选择引擎（Ren'Py/Godot），然后点击优化。",
+        nav_news: "新闻", nav_software: "软件", nav_audio: "音频", nav_faq: "常见问题",
+        hero_subtitle: "先进的独立游戏解决方案与音景",
+        title_news: "最新动态", title_software: "工程与游戏", title_audio: "音频库",
+        news_ap_desc: "发布了对 Godot 和 Ren'Py 的原生支持。",
+        gk_desc_short: "桌面恐怖模拟。揭开 Echo Corp 的秘密。"
     }
 };
 
-function setLanguage(lang) {
+function updateLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        el.textContent = translations[lang][key] || translations['en'][key];
+        if (i18n[lang][key]) el.innerText = i18n[lang][key];
     });
-    document.documentElement.lang = lang;
-    localStorage.setItem('preferredLang', lang);
+    localStorage.setItem('alenia_lang', lang);
 }
 
-// Cargar lenguaje preferido o detectar navegador
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(saved);
+    const savedLang = localStorage.getItem('alenia_lang') || 'en';
+    document.querySelector('.lang-select').value = savedLang;
+    updateLanguage(savedLang);
 });
