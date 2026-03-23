@@ -1,35 +1,54 @@
-# 🌌 Alenia Studios 
-> "Merging classic aesthetics with Autonomous AI Intelligence."
+# 🌌 Alenia Studios | Official Hub
+> **Precision Engineering & Atmospheric Soundscapes.**
 
-Bienvenido al centro de operaciones de **Alenia Studios**. Aquí desarrollamos experiencias indie utilizando motores como **Godot**, **Ren'Py** y **GDevelop**, con el apoyo directo de nuestra IA autónoma: **K.A.I.A.**
+Welcome to the official repository of **Alenia Studios**. We are an independent studio specialized in game optimization, software tools, and high-fidelity audio assets for the indie gamedev community.
 
----
-
-### 🕹️ Proyectos en Desarrollo
-* **Gatekeeper: The Echo Corp Leak** - Una experiencia interactiva de simulación de escritorio y horror (Ren'Py).
+[Website](https://kaia-alenia.github.io/alenia-studios/) • [Itch.io](https://alenia-studios.itch.io/) • [Booth.pm](https://alenia-studios.booth.pm/)
 
 ---
 
-### 🧠 El Factor K.A.I.A. (Kinetic Artificial Intelligence Assistant)
-Nuestros juegos no solo son programados por humanos. **K.A.I.A.** es nuestra IA residente que gestiona:
-- 📡 Monitoreo de tendencias en Moltbook.
-- ✍️ Redacción de Lore y diálogos dinámicos.
-- 🛠️ Optimización de flujos de trabajo en Python.
+## 🛠️ Featured Projects
+
+### 📥 [Audio Porter v2.2](https://alenia-studios.itch.io/audio-porter-alenia)
+A standalone optimization tool for **Ren'Py** and **Godot**. 
+* **Smart Scan:** Recursive audio/video detection.
+* **Auto-Code:** Generates `.rpy` and `.gd` definitions instantly.
+* **Performance:** High-quality OGG/OPUS conversion.
+
+### 👁️ [Gatekeeper: The Echo Corp Leak](https://alenia-studios.itch.io/gatekeeper-the-echo-corp-leak)
+An immersive desktop-horror simulation. 
+* **Status:** PC Version Available | Mobile Version in Final Testing.
+* **Genre:** Psychological Horror / ARG.
+
+### 🎻 [Audio Asset Vault](https://alenia-studios.itch.io/)
+A curated collection of over 8 professional albums designed for immediate impact in short clips and games.
+* *Forgotten Realms, Neon Horizons, Digital Melancholy, and more.*
 
 ---
 
-### 🛠️ Tech Stack
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white)
-![RenPy](https://img.shields.io/badge/Ren'Py-ff7f7f?style=for-the-badge)
-![Ollama](https://img.shields.io/badge/Ollama-Llama3-blue?style=for-the-badge)
+## 🚀 Tech Stack
+* **Languages:** Python (Tools), JavaScript (Web), GDScript (Godot).
+* **Engines:** Godot Engine, Ren'Py.
+* **Audio:** FL Studio, Pydub, FFmpeg.
+* **Design:** Pixel Art & V-Roid Modeling.
 
 ---
 
+## 🌎 Global Reach
+Currently localized for:
+* 🇺🇸 **English** (Primary)
+* 🇲🇽 **Español** (HQ)
+* 🇯🇵 **日本語** (Target Market)
+* 🇨🇳 **中文** (Target Market)
+
 ---
 
-### 📬 Contacto & Presencia Oficial
-* **🕹️ Juega nuestros títulos:** [alenia-studios.itch.io](https://alenia-studios.itch.io/)
-* **📡 K.A.I.A. en Vivo:** [@KAIA_Alenia en Moltbook](https://www.moltbook.com/u/KAIA_Alenia)
-* **📧 Email de Contacto:** `contact.aleniastudios@gmail.com`
-* **🏢 Empresa:** Alenia Studios - Independent Game Development & AI Research.
+## 📬 Contact & Connect
+* **Location:** Santiago de Querétaro, MX.
+* **GitHub:** [@Kaia-Alenia](https://github.com/Kaia-Alenia)
+* **Support:** [contact.aleniastudios@gmail.com](mailto:contact.aleniastudios@gmail.com)
+
+---
+<p align="center">
+  Developed with passion by <b>Alenia Studios</b> © 2026
+</p>
